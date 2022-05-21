@@ -20,6 +20,14 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Farming Simulator 22 Assistant</title>
+	<meta
+		name="description"
+		content="Useful Farming Simulator 22 Assistant to help you enjoy farming"
+	/>
+</svelte:head>
+
 <h1 class="text-4xl mb-4">Farming Simulator 22 Assistant</h1>
 
 <h2 class="text-3xl">Sales price by Month</h2>
@@ -49,7 +57,11 @@
 							<div class="flex flex-col">
 								<div class="text-center font-bold">
 									{item.name}
-									<span class="text-gray-500 text-xs align-top">
+									<span
+										class="{item.first.includes(month.name)
+											? 'text-green-600'
+											: 'text-amber-500'} text-xs align-top"
+									>
 										{item.first.includes(month.name) ? '1st' : ''}
 										{item.second.includes(month.name) ? '2nd' : ''}
 									</span>
