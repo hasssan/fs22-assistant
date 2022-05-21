@@ -22,7 +22,15 @@
 
 <h1 class="text-4xl mb-4">Farming Simulator 22 Assistant</h1>
 
-<h2 class="text-3xl mb-4">Sales price by Month</h2>
+<h2 class="text-3xl">Sales price by Month</h2>
+<p class="mb-4">
+	Credit data source: <a
+		class="text-blue-600"
+		href="https://www.reddit.com/r/farmingsimulator/comments/rjlmq1/fs22_average_sell_prices_v3_postgame_patch/"
+	>
+		FS22 Average sell prices V3 (post-game patch) by u/Edigorin
+	</a>
+</p>
 
 <table class="table-fixed border">
 	<thead>
@@ -61,12 +69,3 @@
 		{/each}
 	</tbody>
 </table>
-
-<p>
-	Credit data source: <a
-		class="text-blue-600"
-		href="https://www.reddit.com/r/farmingsimulator/comments/rjlmq1/fs22_average_sell_prices_v3_postgame_patch/"
-	>
-		FS22 Average sell prices V3 (post-game patch) by u/Edigorin
-	</a>
-</p>
