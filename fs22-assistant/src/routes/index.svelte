@@ -30,7 +30,7 @@
 
 <h1 class="text-4xl mb-4">Farming Simulator 22 Assistant</h1>
 
-<h2 class="text-3xl">Sales price by Month</h2>
+<h2 class="text-3xl">Sales Price by Month</h2>
 <p class="mb-4">
 	Credit data source: <a
 		class="text-blue-600"
