@@ -1,7 +1,7 @@
 <script lang="ts">
 	import products from '../data';
 
-	import Price from '../components/price.svelte';
+	import Product from '../components/product.svelte';
 
 	const months = [
 		{ name: 'Jan' },
@@ -54,24 +54,7 @@
 				{#each months as month}
 					{#if item?.months?.includes(month.name)}
 						<td class="border">
-							<div class="flex flex-col">
-								<div class="text-center font-bold">
-									{item.name}
-									<span
-										class="{item.first.includes(month.name)
-											? 'text-green-600'
-											: 'text-amber-500'} text-xs align-top"
-									>
-										{item.first.includes(month.name) ? '1st' : ''}
-										{item.second.includes(month.name) ? '2nd' : ''}
-									</span>
-								</div>
-								<div class="flex flex-row justify-center">
-									<Price label="Avg" price={item.average} />
-									<Price label="Good" price={item.good} />
-									<Price label="Best" price={item.best} />
-								</div>
-							</div>
+							<Product product={item} monthName={month.name} />
 						</td>
 					{:else}
 						<td class="border" />
