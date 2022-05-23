@@ -13,19 +13,21 @@
 	}
 </script>
 
-<div class="flex flex-col mx-1">
-	<div class="text-center font-bold">
-		{product.name}
-		<span
-			class="{product.first.includes(monthName)
-				? 'text-green-600'
-				: 'text-amber-500'} text-xs align-top"
-		>
+<div
+	class="flex flex-col px-1 py-1 {product.first.includes(monthName)
+		? 'bg-green-400'
+		: 'bg-amber-400'}"
+>
+	<div class="text-center font-bold text-sm">
+		<span class="text-slate-800">
+			{product.name}
+		</span>
+		<sup class="text-slate-800">
 			{product.first.includes(monthName) ? '1st' : ''}
 			{product.second.includes(monthName) ? '2nd' : ''}
-		</span>
+		</sup>
 	</div>
-	<button class="py-1 text-cyan-500 text-xs underline" on:click={show}
+	<button class="text-blue-700 font-bold text-xs underline" on:click={show}
 		>{shown ? 'Hide' : 'Show'} Price</button
 	>
 	{#if shown}
