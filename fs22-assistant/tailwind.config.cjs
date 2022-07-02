@@ -1,7 +1,14 @@
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				darkSeaGreen: "#9FC088",
+				goldCrayola: "#E8C07D",
+				copperRed: "#CC704B",
+				darkBrown: "#614124",
+			}
+		},
 	},
 	plugins: [],
 };
