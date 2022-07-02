@@ -15,8 +15,8 @@
 
 <div
 	class="flex flex-col px-1 py-1 {product.first.includes(monthName)
-		? 'bg-green-400'
-		: 'bg-amber-400'}"
+		? 'bg-darkSeaGreen'
+		: 'bg-goldCrayola'}"
 >
 	<div class="text-center font-bold text-sm">
 		<span class="text-slate-800">
@@ -32,9 +32,9 @@
 	>
 	{#if shown}
 		<div class="flex flex-col justify-center">
-			<Price label="Avg" price={product.average} />
-			<Price label="Good" price={product.good} />
 			<Price label="Best" price={product.best} />
+			<Price label="Good" price={product.good} />
+			<Price label="Avg" price={product.average} />
 		</div>
 	{/if}
 </div>

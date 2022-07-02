@@ -425,15 +425,15 @@ const newData: Product[] = data
 		if (!Array.isArray(item.months)) {
 			item.months = [];
 		}
-		const first = item.first.split(' ');
-		const second = item.second.split(' ');
+		const first = item.first.toLowerCase().split(' ');
+		const second = item.second.toLowerCase().split(' ');
 		const data = {
 			...item,
 			first: first,
 			second: second,
 		};
 		const months = new Set(item.months);
-		const results = [...item.first.split(' '), ...item.second.split(' ')];
+		const results = [...first, ...second];
 		for (const month of results) {
 			months.add(month);
 		}
