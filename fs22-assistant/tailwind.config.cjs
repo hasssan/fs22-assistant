@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
@@ -8,6 +10,9 @@ module.exports = {
 				copperRed: '#CC704B',
 				darkBrown: '#614124',
 				lemonChiffon: '#FCF9C6',
+			},
+			fontFamily: {
+				sans: ['Noto Sans', ...defaultTheme.fontFamily.sans],
 			},
 		},
 	},
