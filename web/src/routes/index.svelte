@@ -1,9 +1,10 @@
 <script lang="ts">
 	import products from '../data';
+	import type { Product } from '../data';
 
-	import Product from '../components/product.svelte';
+	import ProductComponent from '../components/product.svelte';
 
-	const monthData: { [key: string]: { [key: string]: any } } = {
+	const monthData: Record<string, { name: string; name_lower?: string; products: Product[] }> = {
 		jan: { name: 'Jan', products: [] },
 		feb: { name: 'Feb', products: [] },
 		mar: { name: 'Mar', products: [] },
@@ -19,7 +20,8 @@
 		'-': { name: '-', products: [] },
 	};
 
-	const months: any[] = Object.values(monthData);
+	const months: { name: string; name_lower?: string; products: Product[] }[] =
+		Object.values(monthData);
 
 	for (const key in monthData) {
 		const productOfMonth = products.filter((p) => p.months?.includes(key));
@@ -40,16 +42,17 @@
 
 <h2 class="text-3xl">Sales Price by Month (Easy)</h2>
 
-<div class="flex flex-wrap justify-between">
+<div class="flex flex-wrap justify-between mt-6">
 	{#each months as month}
-		<div class="w-28">
-			<div class="text-center font-bold">
+		<div class="w-72 mb-8 border-2 border-darkSeaGreen">
+			<div class="mb-3 pt-1 border-b border-darkSeaGreen text-center font-bold ">
 				{month.name}
 			</div>
-			<div class="text-center">
-				{#each monthData[month.name_lower].products as product}
-					<Product {product} monthName={month.name_lower} />
-				{/each}
+			<div class="mb-3 mx-3 py-1 cursor-pointer rounded-md bg-darkSeaGreen">
+				<div class="text-center">Products</div>
+			</div>
+			<div class="mb-3 mx-3 py-1 cursor-pointer rounded-md bg-darkSeaGreen">
+				<div class="text-center">Crops</div>
 			</div>
 		</div>
 	{/each}
@@ -63,28 +66,3 @@
 		FS22 Average sell prices V3 (post-game patch) by u/Edigorin
 	</a>
 </div>
-
-<!-- <table class="table-fixed border">
-	<thead>
-		<tr>
-			{#each months as item}
-				<th class="border">{item.name}</th>
-			{/each}
-		</tr>
-	</thead>
-	<tbody>
-		{#each products as item}
-			<tr>
-				{#each months as month}
-					{#if item?.months?.includes(month.name)}
-						<td class="border">
-							<Product product={item} monthName={month.name} />
-						</td>
-					{:else}
-						<td class="border" />
-					{/if}
-				{/each}
-			</tr>
-		{/each}
-	</tbody>
-</table> -->
