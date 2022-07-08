@@ -1,10 +1,11 @@
 <script lang="ts">
-	import type { Product } from '../data';
+	import type { Product } from '../types';
 
 	import Price from '../components/price.svelte';
 
 	export let product: Product;
 	export let monthName: string;
+	monthName = monthName.toLowerCase();
 
 	let shown: boolean = false;
 
