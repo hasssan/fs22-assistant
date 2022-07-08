@@ -1,22 +1,5 @@
-export interface Source {
-	name: string;
-	average: number;
-	good: number;
-	best: number;
-	first: string;
-	second: string;
-	months?: string[];
-}
+import type { Source, Product } from './types';
 
-export interface Product {
-	name: string;
-	average: number;
-	good: number;
-	best: number;
-	first: string[];
-	second: string[];
-	months?: string[];
-}
 const data: Source[] = [
 	{
 		name: 'Wheat',
