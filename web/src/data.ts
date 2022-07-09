@@ -1,4 +1,14 @@
-import type { Source, Product } from './types';
+import type { Product, Crops } from './types';
+
+interface Source {
+	name: string;
+	average: number;
+	good: number;
+	best: number;
+	first: string;
+	second: string;
+	months?: string[];
+}
 
 const data: Source[] = [
 	{
@@ -118,8 +128,8 @@ const data: Source[] = [
 		average: 357,
 		good: 445.134375,
 		best: 468.5625,
-		first: 'Jul Sep',
-		second: 'Aug Oct',
+		first: 'Jul,Sep',
+		second: 'Aug,Oct',
 	},
 	{
 		name: 'Eggs',
@@ -166,7 +176,7 @@ const data: Source[] = [
 		average: 513,
 		good: 676.198125,
 		best: 711.7875,
-		first: 'Jan Feb',
+		first: 'Jan,Feb',
 		second: 'Dec',
 	},
 	{
@@ -182,7 +192,7 @@ const data: Source[] = [
 		average: 135,
 		good: 177.946875,
 		best: 187.3125,
-		first: 'Jan Feb',
+		first: 'Jan,Feb',
 		second: 'Dec',
 	},
 	{
@@ -190,7 +200,7 @@ const data: Source[] = [
 		average: 168,
 		good: 221.445,
 		best: 233.1,
-		first: 'Jan Feb',
+		first: 'Jan,Feb',
 		second: 'Dec',
 	},
 	{
@@ -198,7 +208,7 @@ const data: Source[] = [
 		average: 123,
 		good: 176.735625,
 		best: 186.0375,
-		first: 'Jan Feb',
+		first: 'Jan,Feb',
 		second: 'Dec',
 	},
 	{
@@ -206,7 +216,7 @@ const data: Source[] = [
 		average: 99,
 		good: 130.494375,
 		best: 137.3625,
-		first: 'Jan Feb',
+		first: 'Jan,Feb',
 		second: 'Dec',
 	},
 	{
@@ -214,7 +224,7 @@ const data: Source[] = [
 		average: 99,
 		good: 130.494375,
 		best: 137.3625,
-		first: 'Jan Feb',
+		first: 'Jan,Feb',
 		second: 'Dec',
 	},
 	{
@@ -222,7 +232,7 @@ const data: Source[] = [
 		average: 99,
 		good: 131.67,
 		best: 138.6,
-		first: 'Jan Feb',
+		first: 'Jan,Feb',
 		second: 'Dec',
 	},
 	{
@@ -286,16 +296,16 @@ const data: Source[] = [
 		average: 24000,
 		good: 30882.6,
 		best: 32508,
-		first: 'Sep Jul',
-		second: 'Aug Oct',
+		first: 'Sep,Jul',
+		second: 'Aug,Oct',
 	},
 	{
 		name: 'Sugar',
 		average: 1500,
 		good: 1571.0625,
 		best: 1653.75,
-		first: 'Sep Jul',
-		second: 'Aug Oct',
+		first: 'Sep,Jul',
+		second: 'Aug,Oct',
 	},
 	{
 		name: 'Honey',
@@ -403,13 +413,107 @@ const data: Source[] = [
 	},
 ];
 
-const newData: Product[] = data
+interface SeasonCalendar {
+	name: string;
+	plant: string;
+	harvest: string;
+}
+
+const seasonCalendar: SeasonCalendar[] = [
+	{
+		name: 'Wheat',
+		plant: 'Sep,Oct',
+		harvest: 'Jul,Aug',
+	},
+	{
+		name: 'Barley',
+		plant: 'Sep,Oct',
+		harvest: 'Jun,Jul',
+	},
+	{
+		name: 'Canola',
+		plant: 'Aug,Sep',
+		harvest: 'Jul,Aug',
+	},
+	{
+		name: 'Oat',
+		plant: 'Mar,Apr',
+		harvest: 'Jul,Aug',
+	},
+	{
+		name: 'Corn',
+		plant: 'Apr,May',
+		harvest: 'Oct,Nov',
+	},
+	{
+		name: 'Sunflowers',
+		plant: 'Mar,Apr',
+		harvest: 'Oct,Nov',
+	},
+	{
+		name: 'Soybeans',
+		plant: 'Apr,May',
+		harvest: 'Oct,Nov',
+	},
+	{
+		name: 'Potatoes',
+		plant: 'Mar,Apr',
+		harvest: 'Aug,Sep',
+	},
+	{
+		name: 'Sugar Beet',
+		plant: 'Mar,Apr',
+		harvest: 'Oct,Nov',
+	},
+	{
+		name: 'Sugarcane',
+		plant: 'Mar,Apr',
+		harvest: 'Oct,Nov',
+	},
+	{
+		name: 'Cotton',
+		plant: 'Feb,Mar',
+		harvest: 'Oct,Nov',
+	},
+	{
+		name: 'Sorghum',
+		plant: 'Apr,May',
+		harvest: 'Aug,Sep',
+	},
+	{
+		name: 'Grapes',
+		plant: 'Mar,Apr,May',
+		harvest: 'Sep,Oct',
+	},
+	{
+		name: 'Olives',
+		plant: 'Mar,Apr,May,Jun',
+		harvest: 'Oct',
+	},
+	{
+		name: 'Poplar',
+		plant: 'Mar,Apr,May,Jun,Jul,Aug',
+		harvest: 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec',
+	},
+	{
+		name: 'Grass',
+		plant: 'Mar,Apr,May,Jun,Jul,Aug,Spe,Oct,Nov',
+		harvest: 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec',
+	},
+	{
+		name: 'Oilseed Radish',
+		plant: 'Mar,Apr,May,Jun,Jul,Aug,Spe,Oct',
+		harvest: 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec',
+	},
+];
+
+const products: Product[] = data
 	.map((item) => {
 		if (!Array.isArray(item.months)) {
 			item.months = [];
 		}
-		const first = item.first.toLowerCase().split(' ');
-		const second = item.second.toLowerCase().split(' ');
+		const first = item.first.toLowerCase().split(',');
+		const second = item.second.toLowerCase().split(',');
 		const data = {
 			...item,
 			first: first,
@@ -429,4 +533,10 @@ const newData: Product[] = data
 	})
 	.sort((a, b) => a.name.localeCompare(b.name));
 
-export default newData;
+const crops: Crops[] = seasonCalendar.map((item) => {
+	const harvests = item.harvest.toLowerCase().split(',');
+	const plants = item.plant.toLowerCase().split(',');
+	return { ...item, harvests, plants };
+});
+
+export { products, crops };

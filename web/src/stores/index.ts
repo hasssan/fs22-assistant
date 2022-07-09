@@ -1,4 +1,4 @@
-import products from '../data';
+import { products, crops } from '../data';
 import type { Months } from '../types';
 
 const monthData: Record<string, Months> = {
@@ -23,6 +23,8 @@ for (const key in monthData) {
 	const productOfMonth = products.filter((p) => p.months?.includes(key));
 	monthData[key].products = productOfMonth;
 	monthData[key].name_lower = monthData[key].name.toLowerCase();
+	monthData[key].harvests = crops.filter((c) => c.harvests?.includes(key));
+	monthData[key].plants = crops.filter((c) => c.plants?.includes(key));
 }
 
-export { months, monthData };
+export { months };
