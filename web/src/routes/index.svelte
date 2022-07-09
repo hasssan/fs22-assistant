@@ -13,7 +13,7 @@
 
 <h1 class="text-4xl mb-4">Farming Simulator 22 Assistant</h1>
 
-<h2 class="text-3xl">Sales Price by Month (Easy)</h2>
+<h2 class="text-3xl">Calendar (Easy)</h2>
 
 <div class="flex flex-wrap justify-between mt-6 items-start">
 	{#each months as month}
