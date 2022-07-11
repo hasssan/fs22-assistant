@@ -1,5 +1,6 @@
 <script lang="ts">
 	import MonthComponent from '../components/month.svelte';
+	import NavigationComponent from '../components/navigation.svelte';
 	import { months } from '../stores';
 </script>
 
@@ -11,9 +12,9 @@
 	/>
 </svelte:head>
 
-<h1 class="text-4xl mb-4">Farming Simulator 22 Assistant</h1>
+<NavigationComponent />
 
-<h2 class="text-3xl">Calendar (Easy)</h2>
+<h2 class="text-xl text-darkBrown font-bold">Calendar (Easy)</h2>
 
 <div class="flex flex-wrap justify-between mt-6 items-start">
 	{#each months as month}
