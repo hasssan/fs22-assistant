@@ -1,6 +1,7 @@
 {
-	"name": "fs22-sales-price",
-	"version": "0.0.1",
+	"name": "fs22-assistant",
+	"private": true,
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
