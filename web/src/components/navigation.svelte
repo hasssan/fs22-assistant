@@ -1,7 +1,7 @@
 <script lang="ts">
 	const navItems = [
-		{ name: 'Calendar', url: '/' },
-		{ name: 'Sales Price', url: '/sales-price' },
+		{ name: 'Home', url: '/' },
+		{ name: 'Products Price', url: '/products-price' },
 		{ name: 'Credits', url: '/credits' },
 		{ name: 'Github', url: 'https://github.com/hasssan/fs22-assistant' },
 	];
