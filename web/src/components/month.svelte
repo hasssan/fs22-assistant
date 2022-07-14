@@ -18,7 +18,7 @@
 	}
 </script>
 
-<div class="w-72 mb-8 border-2 border-darkSeaGreen">
+<div class="w-72 mb-8 border-2 border-darkSeaGreen rounded">
 	<div class="mb-3 pt-1 border-b border-darkSeaGreen text-center font-bold ">
 		{month.name}
 	</div>

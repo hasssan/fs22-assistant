@@ -6,36 +6,23 @@
 	export let product: Product;
 	export let monthName: string;
 	monthName = monthName.toLowerCase();
-
-	let shown: boolean = false;
-
-	function show() {
-		shown = !shown;
-	}
 </script>
 
 <div
-	class="flex flex-col px-1 py-1 {product.first.includes(monthName)
+	class="flex flex-col px-1 py-1 border border-lemonChiffon {product.first.includes(monthName)
 		? 'bg-darkSeaGreen'
 		: 'bg-goldCrayola'}"
 >
-	<div class="text-center font-bold text-sm">
-		<span class="text-slate-800">
-			{product.name}
-		</span>
-		<sup class="text-slate-800">
+	<div class="text-center text-slate-800 font-bold text-sm">
+		<span>{product.name}</span>
+		<sup>
 			{product.first.includes(monthName) ? '1st' : ''}
 			{product.second.includes(monthName) ? '2nd' : ''}
 		</sup>
 	</div>
-	<button class="text-blue-700 font-bold text-xs underline" on:click={show}
-		>{shown ? 'Hide' : 'Show'} Price</button
-	>
-	{#if shown}
-		<div class="flex flex-col justify-center">
-			<Price label="Best" price={product.best} />
-			<Price label="Good" price={product.good} />
-			<Price label="Avg" price={product.average} />
-		</div>
-	{/if}
+	<div class="flex justify-center">
+		<Price label="Best" price={product.best} />
+		<Price label="Good" price={product.good} />
+		<Price label="Avg" price={product.average} />
+	</div>
 </div>

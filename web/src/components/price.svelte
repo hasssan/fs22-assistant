@@ -16,7 +16,7 @@
 	}
 </script>
 
-<div class="flex flex-col py-1 text-center {bg}">
-	<div class="font-medium text-gray-700">{label}</div>
-	<div class="font-bold">{price}</div>
+<div class="flex flex-col py-1 w-full text-center">
+	<div class="text-xs text-gray-800">{label}</div>
+	<div class="text-xs font-bold">{price}</div>
 </div>
