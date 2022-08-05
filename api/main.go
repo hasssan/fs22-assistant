@@ -25,7 +25,9 @@ func main() {
 	err = xml.Unmarshal([]byte(data), &mf)
 	checkErr(err)
 
-	for _, v := range mf.FillTypes {
-		fmt.Println(v.Name)
+	for _, v := range mf.List {
+		fmt.Println("-------------------")
+		fmt.Println(v)
+		fmt.Println("-------------------")
 	}
 }
