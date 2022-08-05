@@ -20,12 +20,23 @@ func main() {
 	data, err := os.ReadFile(filePath)
 	checkErr(err)
 
-	var mf models.FillTypes
+	// var mf models.FillTypes
 
-	err = xml.Unmarshal([]byte(data), &mf)
+	// err = xml.Unmarshal([]byte(data), &mf)
+	// checkErr(err)
+
+	// for _, v := range mf.List {
+	// 	fmt.Println("-------------------")
+	// 	fmt.Println(v)
+	// 	fmt.Println("-------------------")
+	// }
+
+	var g models.Growth
+
+	err = xml.Unmarshal([]byte(data), &g)
 	checkErr(err)
 
-	for _, v := range mf.List {
+	for _, v := range g.Seasonal.Fruits {
 		fmt.Println("-------------------")
 		fmt.Println(v)
 		fmt.Println("-------------------")
