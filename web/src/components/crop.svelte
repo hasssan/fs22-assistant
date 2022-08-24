@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let name: String;
+	export let name: string;
 </script>
 
 <div class="flex flex-col px-1 py-1 rounded-md">

@@ -513,9 +513,6 @@ const products: Product[] = data
 			item.months = [];
 		}
 		const first = item.first.toLowerCase().split(',');
-		console.log(`hssn -----------------------------------------------------hssn`);
-		console.log(`hssn ~ file: data.ts ~ line 516 ~ .map ~ first`, first);
-		console.log(`hssn -----------------------------------------------------hssn`);
 		const second = item.second.toLowerCase().split(',');
 		const data = {
 			...item,
