@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { products } from '../data';
+	import { products } from '../../data';
 
 	function capitalizeMonths(months: string[]) {
 		return months.map((month) => {
