@@ -11,7 +11,7 @@
 	<div class="relative flex items-center justify-between h-16">
 		<div class="flex-1 flex items-center justify-between">
 			<div class="flex-shrink-0 flex items-center">
-				<a href="/" class="text-darkBrown text-2xl font-bold">Farming Simulator 22 Assistant</a>
+				<a href="/" class="text-darkBrown text-2xl font-bold">FS22 Assistant</a>
 			</div>
 			<div class="hidden sm:block sm:ml-6">
 				<div class="flex space-x-4">
