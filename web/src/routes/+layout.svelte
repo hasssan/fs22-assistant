@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Farming Simulator 22 Assistant</title>
+	<title>FS22 Assistant</title>
 	<meta
 		name="description"
 		content="Useful Farming Simulator 22 Assistant to help you enjoy farming"
