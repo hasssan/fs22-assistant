@@ -1,6 +1,6 @@
 package models
 
-type fillType struct {
+type FillType struct {
 	Name    string `xml:"name,attr"`
 	Economy struct {
 		PricePerLiter string `xml:"pricePerLiter,attr"`
@@ -14,5 +14,5 @@ type fillType struct {
 }
 
 type FillTypes struct {
-	List []fillType `xml:"fillTypes>fillType"`
+	List []FillType `xml:"fillTypes>fillType"`
 }
