@@ -16,13 +16,14 @@ func main() {
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
-
 	APIPort := os.Getenv("API_PORT")
+
+	// Load Product before starting the server
+	products := loadProduct()
 
 	app := fiber.New()
 
 	app.Get("/products", func(c *fiber.Ctx) error {
-		products := loadProduct()
 		return c.Status(fiber.StatusOK).JSON(fiber.Map{
 			"success": true,
 			"data":    products,

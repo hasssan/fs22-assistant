@@ -6,8 +6,8 @@ type FillType struct {
 		PricePerLiter string `xml:"pricePerLiter,attr"`
 		Factors       struct {
 			Factor []struct {
-				Period string `xml:"period,attr"`
-				Value  string `xml:"value,attr"`
+				Period string  `xml:"period,attr"`
+				Value  float32 `xml:"value,attr"`
 			} `xml:"factor"`
 		} `xml:"factors"`
 	} `xml:"economy"`
