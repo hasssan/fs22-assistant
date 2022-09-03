@@ -3,10 +3,10 @@ package models
 type FillType struct {
 	Name    string `xml:"name,attr"`
 	Economy struct {
-		PricePerLiter string `xml:"pricePerLiter,attr"`
+		PricePerLiter float32 `xml:"pricePerLiter,attr"`
 		Factors       struct {
 			Factor []struct {
-				Period string  `xml:"period,attr"`
+				Period int     `xml:"period,attr"`
 				Value  float32 `xml:"value,attr"`
 			} `xml:"factor"`
 		} `xml:"factors"`
