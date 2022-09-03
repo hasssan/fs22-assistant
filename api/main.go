@@ -50,7 +50,7 @@ func loadProducts() []models.Product {
 	var products []models.Product
 
 	for _, v := range mf.List {
-		id := strings.ReplaceAll(strings.ToLower(v.Name), " ", "")
+		id := strings.ToLower(v.Name)
 		products = append(products, models.Product{
 			ID:        id,
 			Name:      v.Name,
